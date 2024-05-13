@@ -39,64 +39,71 @@ const music=[
         name_kh:'shahin_najafi',
         path:"music/Shahin Najafi - Iran (320).mp3",
     }
+    ,
+    {
+        cover:"https://golsarmusic.ir/wp-content/uploads/2019/09/Modern-Talking-%E2%80%93-No-Face-No-Name-No-Number.jpg",
+        name_song:"shery shery leadi",
+        name_kh:"uncwon",
+        path:"music/Modern Talking - Cheri Cheri Lady (320).mp3",
+    }
    
 ]
 
 
-    let $=document
+    let $=document;
 
-    let imgcover=$.getElementById('img_cover')
-    let audio=$.getElementById('audio')
+    let imgcover=$.getElementById('img_cover');
+    let audio=$.getElementById('audio');
 
-    let parentimg=$.querySelector('.parent_img')
-    let info=$.querySelector('.info')
-    let naemmusic=$.querySelector('.naem_music')
-    let namekh=$.querySelector('.name_kh')
-    let timesh=$.querySelector('.time_sh')
-    let timefinsh=$.querySelector('.time_finsh')
-    let parentnavar=$.querySelector('.parent_navar')
-    let navar=$.querySelector('.navar')
-    let previous=$.querySelector('.previous')
-    let next=$.querySelector('.next')
-    let speed=$.querySelector('.speed')
-    let menu=$.querySelector('.menu')
-    let play=$.querySelector('.play')
-    let ul=$.querySelector('.ul')
-    let timemusic=$.querySelector('.time_music')
+    let parentimg=$.querySelector('.parent_img');
+    let info=$.querySelector('.info');
+    let naemmusic=$.querySelector('.naem_music');
+    let namekh=$.querySelector('.name_kh');
+    let timesh=$.querySelector('.time_sh');
+    let timefinsh=$.querySelector('.time_finsh');
+    let parentnavar=$.querySelector('.parent_navar');
+    let navar=$.querySelector('.navar');
+    let previous=$.querySelector('.previous');
+    let next=$.querySelector('.next');
+    let speed=$.querySelector('.speed');
+    let menu=$.querySelector('.menu');
+    let play=$.querySelector('.play');
+    let ul=$.querySelector('.ul');
+    let timemusic=$.querySelector('.time_music');
 
-    let iteam=$.getElementsByClassName('iteam')
-    let piteam=$.getElementsByClassName('p_iteam')
-    let imgiteam=$.getElementsByClassName('img_iteam')
+    let iteam=$.getElementsByClassName('iteam');
+    let piteam=$.getElementsByClassName('p_iteam');
+    let imgiteam=$.getElementsByClassName('img_iteam');
 
-    let a=false
-    let add=0
+    let a=false;
+    let add=0;
     let musicselect;
 
-    audio.addEventListener('timeupdate',time_update)
-    audio.addEventListener('ended',ended)
-    play.addEventListener('click',playaudio)
-    next.addEventListener('click',nextmusic)
-    previous.addEventListener('click',previousmusic)
-    speed.addEventListener('click',musicspeed)
-    parentnavar.addEventListener('click',rol)
-    menu.addEventListener('click',musicmenu)
+    audio.addEventListener('timeupdate',time_update);
+    audio.addEventListener('ended',ended);
+    play.addEventListener('click',playaudio);
+    next.addEventListener('click',nextmusic);
+    previous.addEventListener('click',previousmusic);
+    speed.addEventListener('click',musicspeed);
+    parentnavar.addEventListener('click',rol);
+    menu.addEventListener('click',musicmenu);
 
 
     // for/////////////
 
     for (var i=0;i<music.length;i++){
-        let newli=$.createElement('li')
-        let newimg=$.createElement('img')
-        let newp=$.createElement('p')
-        newimg.classList.add('img_iteam')
-        newp.classList.add('p_iteam')
-        newli.classList.add('iteam')
-        newli.append(newimg)
-        newli.append(newp)
-        ul.append(newli)
+        let newli=$.createElement('li');
+        let newimg=$.createElement('img');
+        let newp=$.createElement('p');
+        newimg.classList.add('img_iteam');
+        newp.classList.add('p_iteam');
+        newli.classList.add('iteam');
+        newli.append(newimg);
+        newli.append(newp);
+        ul.append(newli);
         imgiteam[i].src=music[i].cover;
-        piteam[i].textContent=music[i].name_song
-        iteam[i].addEventListener('click',iteamplay) 
+        piteam[i].textContent=music[i].name_song;
+        iteam[i].addEventListener('click',iteamplay) ;
         
     }
 
@@ -105,8 +112,8 @@ const music=[
     function time_update(){
         let minutes=Math.floor(audio.currentTime /60);
         let seconds=Math.floor(audio.currentTime %60);
-        let minut=Math.floor(audio.duration/60 )
-        let second=Math.floor(audio.duration%60)
+        let minut=Math.floor(audio.duration/60 );
+        let second=Math.floor(audio.duration%60);
     
         if (seconds < 10) 
             seconds = "0" +seconds;
@@ -115,137 +122,136 @@ const music=[
             timefinsh.textContent=minut +':'+second;
 
             timesh.textContent = minutes + ":" + seconds;
-            let y=(audio.currentTime/audio.duration)*100
-            navar.style.width=y+'%'
+            let y=(audio.currentTime/audio.duration)*100;
+            navar.style.width=y+'%';
     }
 
     // play//////////////////////////////////////play
     nextpreviousplay(add)
     function playaudio(){
-        parentimg.style.display='inline'
-        info.style.opacity='100'
+        parentimg.style.display='inline';
+        info.style.opacity='100';
         if(!a){
         
             play.src='img/pause-icon.png';
-            play.removeEventListener('click',playaudio)
-            play.addEventListener('click',musicpause)
-            play.title='pause'
-            play.alt='pause'
+            play.removeEventListener('click',playaudio);
+            play.addEventListener('click',musicpause);
+            play.title='pause';
+            play.alt='pause';
                 setTimeout(() => {
-                    timemusic.style.opacity='100'
-                    audio.play()
+                    timemusic.style.opacity='100';
+                    audio.play();
                 }, 700);
             }  
-        a=true
+        a=true;
     }
 
     // pause//////////////////////////////////////pause
 
     function musicpause(){
-        play.src='img/play-icon.png'
-        play.removeEventListener('click',musicpause)
-        play.addEventListener('click',playaudio)
-        play.title='play'
-        play.alt='play'
-            audio.pause()
-        a=false
+        play.src='img/play-icon.png';
+        play.removeEventListener('click',musicpause);
+        play.addEventListener('click',playaudio);
+        play.title='play';
+        play.alt='play';
+        audio.pause();
+        a=false;
     }
 
     // next//////////////////////////////////////next
     function nextmusic(){
-        add++
+        add++;
         if(add>music.length-1)
-            add=0
+            add=0;
 
-        nextpreviousplay(add)
+        nextpreviousplay(add);
     }
     function previousmusic(){
-        add--
+        add--;
         if(add<0)
-            add=music.length-1
-
-        nextpreviousplay(add)
+            add=music.length-1;
+            nextpreviousplay(add);
     }
 
     // nextpreviousplay/////////////////////////////////////
     
     function nextpreviousplay(wech){
         if(audio.playbackRate=1.5){
-            audio.playbackRate=1
-            speed.style.backgroundColor='#e7e7e7'
+            audio.playbackRate=1;
+            speed.style.backgroundColor='#e7e7e7';
         }
-        info.style.opacity='100'
-        parentimg.style.display='inline'
-        musicselect=(music[wech])
-        imgcover.src=musicselect.cover
-        naemmusic.innerHTML=musicselect.name_song
-        namekh.innerHTML=musicselect.name_kh
-        audio.src=musicselect.path
+        info.style.opacity='100';
+        parentimg.style.display='inline';
+        musicselect=(music[wech]);
+        imgcover.src=musicselect.cover;
+        naemmusic.innerHTML=musicselect.name_song;
+        namekh.innerHTML=musicselect.name_kh;
+        audio.src=musicselect.path;
         if(a){
             setTimeout(() => {  
-                audio.play()
-            }, 700);
+                audio.play();
+            }, 500);
         }
     }
 
     // click chang navar///////////////////////////////////////
 
     function rol(n){
-        let jam=(n.offsetX/this.clientWidth)*audio.duration
-        audio.currentTime=jam
+        let jam=(n.offsetX/this.clientWidth)*audio.duration;
+        audio.currentTime=jam;
     }
 
     // speed////////////////////////////speed
 
-    let b=false
+    let b=false;
     function musicspeed(){
         if(a&!b){
-            audio.playbackRate=1.5
-            speed.style.backgroundColor='orangered'
-            b=true
+            audio.playbackRate=1.5;
+            speed.style.backgroundColor='orangered';
+            b=true;
         }
         else{
-            audio.playbackRate=1
-            speed.style.backgroundColor='#e7e7e7'
-            b=false
+            audio.playbackRate=1;
+            speed.style.backgroundColor='#e7e7e7';
+            b=false;
         } 
     }
 
     // menu//////////////////////////menu
 
-    let vazeat=false
+    let vazeat=false;
     let widthbody;
     function musicmenu(){
             if(!vazeat){
-                ul.style.top='40%'
-                menu.src="img/cancel-icon.png"
-                menu.title='cancel'
-                menu.classList='menu_cancle'
-                vazeat=true
+                ul.style.top='40%';
+                menu.src="img/cancel-icon.png";
+                menu.title='cancel';
+                menu.classList='menu_cancle';
+                vazeat=true;
             }
             else {
-                ul.style.top='-250px'
-                menu.src="img/menu-icon.png"
-                menu.title='menu'
-                menu.classList='menu'
-                vazeat=false
+                ul.style.top='-250px';
+                menu.src="img/menu-icon.png";
+                menu.title='menu';
+                menu.classList='menu';
+                vazeat=false;
             }
     }
 
     // iteamplay//////////////////////////itemplay
 
     function iteamplay(event2){
-        let liselect=event2.target.parentElement
+        let liselect=event2.target.parentElement;
         let find=music.findIndex(element3 => {
-            return  (element3.name_song==liselect.children[1].textContent)
+            return  (element3.name_song==liselect.children[1].textContent);
         });
-    add=find-1
-    nextmusic()
-    playaudio()
+    add=find-1;
+    nextmusic();
+    playaudio();
     }
 
     // finsh audio =next audio//////////////////////
 
     function ended(){
-        nextmusic()
+        nextmusic();
     }
