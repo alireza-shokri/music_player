@@ -42,10 +42,22 @@ const music=[
     ,
     {
         cover:"https://golsarmusic.ir/wp-content/uploads/2019/09/Modern-Talking-%E2%80%93-No-Face-No-Name-No-Number.jpg",
-        name_song:"shery shery leadi",
+        name_song:"shery shery leadi  (320).mp3",
         name_kh:"uncwon",
         path:"music/Modern Talking - Cheri Cheri Lady (320).mp3",
-    }
+    },
+    {
+        cover:"https://music-fa.com/wp-content/uploads/2019/11/Farhad-Barf-Music-fa.com_-150x150.jpg",
+        name_song:"ayne (320).mp3",
+        name_kh:"farhad mehrad",
+        path:"music/Farhad Mehrad - Ayne (320).mp3",
+    },
+    {
+        cover:"https://music-fa.com/wp-content/uploads/2023/12/Alireza-Ghorbani-Dar-Zolfe-To-Avizam-Music-fa.com_-300x300.jpg",
+        name_song:"Parishani (320).mp3",
+        name_kh:"alireza ghorbani",
+        path:"music/Alireza Ghorbani - Parishani (320).mp3",
+    },
    
 ]
 
