@@ -1,65 +1,58 @@
-const music=[
-   {
-        cover:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Anonymous_emblem.svg/1200px-Anonymous_emblem.svg.png",
-        name_song:'Anonymus',
-        name_kh:'we',
-        path:"music/music.mp3",
-    }
-    ,
-    {
-        cover:"https://platinumlist.net/guide/wp-content/uploads/2023/03/8359_img_worlds_of_adventure-big1613913137.jpg-1024x683.webp",
-        name_song:'music.mp3',
-        name_kh:' ',
-        path:"music/20.mp3",
-    },
-    {
-        cover:"https://i1.sndcdn.com/artworks-rvxsB6y5jJLgWpyP-FM5WzA-t500x500.jpg",
-        name_song:'chiez-shahin.mp3',
-        name_kh:'shahin-najafi',
-        path:"music/Shahin Najafi - Chiz 128.mp3",
-    }
-    ,
-    {
-        cover:"https://i1.sndcdn.com/artworks-sWIdYVG7GvTLx3ur-0jnzBw-t500x500.jpg",
-        name_song:'Tramadol-Shahin.mp3',
-        name_kh:'shahin_najafi',
-        path:"music/04 Tramadol.mp3",
-    }
-    ,
-    {
-        cover:"https://i1.sndcdn.com/avatars-nuQJbtWy1PzIzbUG-XyeeZw-t500x500.jpg",
-        name_song:'Marge Nazli.mp3',
-        name_kh:'shahin_najafi',
-        path:"music/028 - Shahin Najafi - Marge Nazli.mp3",
-    }
-    ,
-    {
-        cover:"https://m.media-amazon.com/images/M/MV5BZGE3Njk3MDktMzg1YS00YjJkLWJhMDEtNzlhNTQ1MTY3MGM2XkEyXkFqcGdeQXVyNzM1MDU5Mjc@._V1_.jpg",
-        name_song:'Shahin Najafi - Iran (320).mp3',
-        name_kh:'shahin_najafi',
-        path:"music/Shahin Najafi - Iran (320).mp3",
-    }
-    ,
-    {
-        cover:"https://golsarmusic.ir/wp-content/uploads/2019/09/Modern-Talking-%E2%80%93-No-Face-No-Name-No-Number.jpg",
-        name_song:"shery shery leadi  (320).mp3",
-        name_kh:"uncwon",
-        path:"music/Modern Talking - Cheri Cheri Lady (320).mp3",
-    },
-    {
-        cover:"https://music-fa.com/wp-content/uploads/2019/11/Farhad-Barf-Music-fa.com_-150x150.jpg",
-        name_song:"ayne (320).mp3",
-        name_kh:"farhad mehrad",
-        path:"music/Farhad Mehrad - Ayne (320).mp3",
-    },
-    {
-        cover:"https://music-fa.com/wp-content/uploads/2023/12/Alireza-Ghorbani-Dar-Zolfe-To-Avizam-Music-fa.com_-300x300.jpg",
-        name_song:"Parishani (320).mp3",
-        name_kh:"alireza ghorbani",
-        path:"music/Alireza Ghorbani - Parishani (320).mp3",
-    },
-   
-]
+const music=[]
+
+function create(cover,name_song,name_kh,path){
+    this.cover=cover
+    this.name_song=name_song
+    this.name_kh=name_kh
+    this.path=path
+}
+
+music.push(new create("https://music-fa.com/wp-content/uploads/2023/12/Alireza-Ghorbani-Dar-Zolfe-To-Avizam-Music-fa.com_-300x300.jpg",
+    "Parishani (320).mp3",
+    "alireza ghorbani",
+    "music/Alireza Ghorbani - Parishani (320).mp3"))
+
+music.push(new create("https://music-fa.com/wp-content/uploads/2019/11/Farhad-Barf-Music-fa.com_-150x150.jpg",
+    "ayne (320).mp3",
+    "farhad mehrad",
+    "music/Farhad Mehrad - Ayne (320).mp3",))
+
+music.push(new create("https://golsarmusic.ir/wp-content/uploads/2019/09/Modern-Talking-%E2%80%93-No-Face-No-Name-No-Number.jpg",
+    "shery shery leadi  (320).mp3",
+    "uncwon",
+    "music/Modern Talking - Cheri Cheri Lady (320).mp3",))
+
+music.push(new create("https://m.media-amazon.com/images/M/MV5BZGE3Njk3MDktMzg1YS00YjJkLWJhMDEtNzlhNTQ1MTY3MGM2XkEyXkFqcGdeQXVyNzM1MDU5Mjc@._V1_.jpg",
+    'Shahin Najafi - Iran (320).mp3',
+    'shahin_najafi',
+    "music/Shahin Najafi - Iran (320).mp3",))
+
+music.push(new create("https://i1.sndcdn.com/avatars-nuQJbtWy1PzIzbUG-XyeeZw-t500x500.jpg",
+    'Marge Nazli.mp3',
+    'shahin_najafi',
+    "music/028 - Shahin Najafi - Marge Nazli.mp3",))
+
+
+music.push(new create("https://i1.sndcdn.com/artworks-sWIdYVG7GvTLx3ur-0jnzBw-t500x500.jpg",
+    'Tramadol-Shahin.mp3',
+    'shahin_najafi',
+    "music/04 Tramadol.mp3",))
+
+
+music.push(new create("https://i1.sndcdn.com/artworks-rvxsB6y5jJLgWpyP-FM5WzA-t500x500.jpg",
+    'chiez-shahin.mp3',
+    'shahin-najafi',
+    "music/Shahin Najafi - Chiz 128.mp3",))
+
+music.push(new create( "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Anonymous_emblem.svg/1200px-Anonymous_emblem.svg.png",
+    'Anonymus',
+    'we',
+    "music/music.mp3",))
+
+music.push(new create("https://platinumlist.net/guide/wp-content/uploads/2023/03/8359_img_worlds_of_adventure-big1613913137.jpg-1024x683.webp",
+    'music.mp3',
+    'no name',
+    "music/20.mp3",))
 
 
     let $=document;
